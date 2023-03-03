@@ -1,10 +1,27 @@
 package com.example.demo.controller;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="course")
 public class Course {
 
+	@Id
+	@Column(name="id")
+	@GeneratedValue
 	private long id;
+	@Column(length = 20)
 	private String title;
+	@Column(length = 50)
 	private String description;
+	
+	public Course() {
+		
+	}
 	
 	public Course(long id, String title, String description) {
 		super();
